@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Seseorang yang Kucintai</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Untuk Seseorang yang Kucintai</h1>
+        <form id="loveMessageForm">
+            <textarea id="loveMessage" rows="5" placeholder="Tulis pesan cinta kamu di sini..."></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+document.getElementById('loveMessageForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let message = document.getElementById('loveMessage').value.trim();
+    
+    if (message === '') {
+        alert('Mohon tulis pesan cinta kamu terlebih dahulu.');
+        return;
+    }
+    
+    // Kirim pesan bisa diimplementasikan di sini (misalnya menggunakan fungsi AJAX)
+    alert('Pesan cinta kamu telah terkirim!');
+    document.getElementById('loveMessage').value = '';
+});
